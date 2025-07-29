@@ -1,4 +1,9 @@
-@import './base.css';
+@import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  grid-template-columns: '70/30' 70% 28%;
+}
 
 #app {
   max-width: 1280px;
