@@ -31,3 +31,4 @@ coverage
 
 # local old files
 /oldFiles/
+/src/mock/
