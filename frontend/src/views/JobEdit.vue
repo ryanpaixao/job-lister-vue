@@ -3,5 +3,5 @@
 </script>
 
 <template>
-
+  <div>Job Edit</div>
 </template>
