@@ -5,6 +5,7 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
 
 import JobListing from '@/components/JobListing.vue';
+import BackButton from '@/components/BackButton.vue';
 
 const route = useRoute();
 const jobId = route.params.id;
@@ -16,7 +17,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/jobs/${jobId}`);
+    const response = await axios.get(`/api/jobs/${jobId}`);
     state.job = response.data;
   } catch (error) {
     console.log('Error fetching job: ', error);
@@ -28,6 +29,7 @@ onMounted(async () => {
 
 <template>
   <!-- If NOT loading -->
+  <BackButton />
   <JobListing v-if="!state.isLoading" :job="state.job" />
 
   <!-- If loading -->
