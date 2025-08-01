@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 import axios from 'axios';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
-import JobListing from './JobListing.vue';
+import JobListing from './JobListingCard.vue';
 
 defineProps({
   limit: Number,
