@@ -50,9 +50,9 @@ const props = defineProps({
             <h3 class="text-xl font-bold mb-6">
               Company Info
             </h3>
-            <h2 class="text-2xl">{{ job.company.name }}</h2>
+            <h2 class="text-2xl">{{ job.company?.name }}</h2>
             <p class="my-2">
-              {{ job.company.description }}
+              {{ job.company?.description }}
             </p>
 
             <hr class="my-4" />
@@ -61,13 +61,13 @@ const props = defineProps({
               Contact Email:
             </h3>
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ job.company.contactEmail }}
+              {{ job.company?.contactEmail }}
             </p>
             <h3 class="text-xl">
               Contact Phone:
             </h3>
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ job.company.contactPhone }}
+              {{ job.company?.contactPhone }}
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const props = defineProps({
             <h3 class="text-xl font-bold mb-6">
               Manage Job
             </h3>
-            <RouterLink :to="`/job/edit/${job.id}`"
+            <RouterLink :to="`/jobs/edit/${job.id}`"
               class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
               Edit Job
             </RouterLink>
