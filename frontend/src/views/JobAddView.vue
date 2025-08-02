@@ -1,9 +1,11 @@
 <script setup>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { useToast } from 'vue-toastification';
 import axios from 'axios';
 
 const router = useRouter();
+const toast = useToast();
 
 const form = reactive({
   type: 'Full-Time',
@@ -36,9 +38,11 @@ const handleSubmit = async () => {
 
   try {
     const response = await axios.post('/api/jobs', newJob);
-    router.push(`/jobs/${response.data.id}`);
+    toast.success('Job Added Successfully');
+    setTimeout(() => router.push(`/jobs/${response.data.id}`), 400); // Delay before redirection
   } catch (error) {
     console.error('Error adding job: ', error);
+    toast.error('Job was not added!');
   }
 };
 </script>
